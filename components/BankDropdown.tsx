@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { useSearchParams, useRouter } from "next/navigation";
-import { useState } from "react";
+import Image from 'next/image';
+import { useSearchParams, useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 import {
   Select,
@@ -10,14 +10,14 @@ import {
   SelectGroup,
   SelectItem,
   SelectLabel,
-  SelectTrigger,
-} from "@/components/ui/select";
-import { formUrlQuery, formatAmount } from "@/lib/utils";
+  SelectTrigger
+} from '@/components/ui/select';
+import { formUrlQuery, formatAmount } from '@/lib/utils';
 
 export const BankDropdown = ({
   accounts = [],
   setValue,
-  otherStyles,
+  otherStyles
 }: BankDropdownProps) => {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -29,13 +29,13 @@ export const BankDropdown = ({
     setSeclected(account);
     const newUrl = formUrlQuery({
       params: searchParams.toString(),
-      key: "id",
-      value: id,
+      key: 'id',
+      value: id
     });
     router.push(newUrl, { scroll: false });
 
     if (setValue) {
-      setValue("senderBank", id);
+      setValue('senderBank', id);
     }
   };
 
